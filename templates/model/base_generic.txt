@@ -1,0 +1,14 @@
+{% extends 'model/base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block extracss %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+{% endblock %}
