@@ -4,10 +4,9 @@
     padding: 0;
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #e2e2e2;
 }
 
 h1 {
@@ -21,27 +20,84 @@ th {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
-/* TAMANHO DA LOGO */
-.logo img {
-    height: 72px;
+p {
+    font-family: 'DM Sans';
+    margin-bottom: 0px !important;
+}
+
+/* LOGO RETECH */
+.logo {
+    margin-left: 123px;
+    width: 155px;
+    height: 60px;
+    top: 9px;
+    font-family: 'Poppins';
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000 !important;
+}
+
+.logo span {
+    color: #69B99D;
+}
+
+/* LOGO RETECH FOOTER */
+.footer {
+    top: 0px !important;
+    margin-left: 0px !important;
+}
+
+.footer span {
+    color: #fff;
 }
 
 /* ESTILIZAÇÃO DA BARRA DE NAVEGAÇÃO */
 .navbar {
   padding: 0 !important;
+  border-bottom: 1px solid #E5E5E5;
 }
 
 .nav-link {
     height: 60px
 }
 
-.navbar-nav .nav-item a{
+.navbar-nav,
+.nav-item a{
     color: #0f241d;
+    font-family: 'DM Sans';
 }
 
-.navbar .navbar-nav .nav-item a:hover {
+.navbar
+.navbar-nav
+.nav-item a:hover {
     color: #69b99d;
     border-bottom: 2px solid #69b99d;
+}
+
+.navbar-nav {
+    margin-right: 131px;
+}
+
+/* ESTILIZAÇÃO DO FOOTER */
+.footer {
+    width: 100vw;
+    background-color: #69B99D;
+    margin-top: 50px;
+}
+
+.footer,
+.content {
+    color: #F9F9F9;
+}
+
+/* HOVER DAS SVGs DO FOOTER */
+.networks a svg:hover {
+    fill: #0f241d;
+}
+
+.main {
+    min-height: 63vh;
 }

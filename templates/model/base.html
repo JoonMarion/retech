@@ -7,48 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+
+    <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- ICONS KIT -->
+
+
     {% block extracss %}
     {% endblock %}
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
-         <div class="logo ms-3">
-            <a href="{% url 'home' %}">
-                <img src="{% static 'image/retech-logo.png' %}" alt="Logo" class="logo-img">
-            </a>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a href="{% url 'home' %}" class="logo">
+        Re<span>tech</span>.
+    </a>
+    <div class="container-fluid">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar" id="navbarNav">
+            <ul class="navbar-nav ms-auto pt-3">
+                <li class="nav-item ms-auto ps-3 pe-3">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item ms-auto ps-3 pe-3">
+                    <a class="nav-link" href="/about/">Sobre</a>
+                </li>
+                <li class="nav-item ms-auto ps-3 pe-3">
+                    <a class="nav-link" href="/services/">Serviços</a>
+                </li>
+                <li class="nav-item ms-auto ps-3 pe-3">
+                    <a class="nav-link" href="/information/">Informações</a>
+                </li>
+                <li class="nav-item ms-auto ps-3 pe-3">
+                    <a class="nav-link" href="/contact/">Contato</a>
+                </li>
+            </ul>
         </div>
-        <div class="container-fluid">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar" id="navbarNav">
-                <ul class="navbar-nav ms-auto pt-3">
-                    <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" href="/about/">Sobre</a>
-                    </li>
-                    <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" href="/services/">Serviços</a>
-                    </li>
-                    <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" href="/information/">Informações</a>
-                    </li>
-                    <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" href="/contact/">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    {% block content %}
-    {% endblock %}
+    </div>
+</nav>
+<section class="main">
+    <h1>teste</h1>
+</section>
+<div class="footer">
+  <footer class="row py-5 border-top">
+    <div class="col">
+    </div>
+    <div class="col content">
+        <a href="{% url 'home' %}" class="logo footer">
+            Re<span>tech</span>.
+        </a>
+        <p>&copy; 2021 Retech.</p>
+        <p>Todos os direitos reservados.</p>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col networks float-right my-auto d-flex justify-content-end">
+        {% load bootstrap_icons %}
+        <a href="">{% bs_icon 'whatsapp' extra_classes="mx-3" size='30px' color='white' %}</a>
+        <a href="">{% bs_icon 'instagram' extra_classes="mx-3" size='30px' color='white' %}</a>
+        <a href="">{% bs_icon 'facebook' extra_classes="mx-3" size='30px' color='white' %}</a>
+        <a href="">{% bs_icon 'youtube' extra_classes="ms-3" size='30px' color='white' %}</a>
+    </div>
+    <div class="col">
+    </div>
+  </footer>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
