@@ -1,0 +1,48 @@
+{% extends 'model/base.html' %}
+
+{% block title %}Informações - Retech.{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="first-section centered">
+    <div class="container text-start info-first-content">
+        <h1 class="title">
+            Como o descarte correto do lixo eletrônico contribui com o meio ambiente?
+        </h1>
+        <br>
+        <p class="lh-base">
+            O destino que damos a um celular, computador, monitor, tv etc, pode influenciar diretamente na saúde
+            pública e
+            no meio ambiente. De acordo com Marli França, responsável pela área da saúde da BRK ambiental em Mauá,
+            “o
+            descarte incorreto” de material eletrônico resulta em danos à saúde pública devido às substâncias
+            tóxicas
+            liberadas, podendo também contaminar solos e lençois freáticos.
+        </p>
+        <br>
+        <p class="lh-base">
+            Para fazer a sua parte, os produtos que não estão mais sendo utilizados em sua casa podem ser entregues
+            em
+            pontos de coleta ou em lojas que comercializam produtos eletrônicos ou você pode efetuar a doação deste
+            produto
+            eletrônico, caso ainda esteja funcional. Essas pequenas atitudes e mudanças de hábito podem contribuir
+            significativamente para saúde do planeta.
+        </p>
+    </div>
+</section>
+
+<section class="second-section centered">
+    <div class="container">
+        <div class="row">
+
+            <div class="col centered text-center">
+            </div>
+
+            <div class="col information-second-section">
+                <img src="{% static 'image/computer.jpeg' %}" alt="Card" class="Card">
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

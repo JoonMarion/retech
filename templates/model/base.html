@@ -23,20 +23,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@700&display=swap" rel="stylesheet">
-
-    <!-- ICONS KIT -->
-
-
     {% block extracss %}
     {% endblock %}
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a href="{% url 'home' %}" class="logo">
+<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+    <a href="{% url 'home' %}" class="logo text-colorize">
         Re<span>tech</span>.
     </a>
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

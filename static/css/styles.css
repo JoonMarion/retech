@@ -26,6 +26,11 @@ a {
 p {
     font-family: 'DM Sans', serif;
     margin-bottom: 0 !important;
+    color: #767676;
+}
+
+li {
+    list-style: none;
 }
 
 .title {
@@ -54,7 +59,7 @@ p {
     color: #000000 !important;
 }
 
-.logo span {
+.text-colorize span {
     color: #69B99D;
 }
 
@@ -175,15 +180,13 @@ p {
     width: 610px;
 }
 
-/* COR DO TEXTO DO ABOUT */
-.about-right-content p {
-    color: #767676;
-}
-
 /* ESTILIZANDO SEÇÃO SERVICES */
 .services {
     background-color: rgba(221, 221, 221, 0.27);
     height: 870px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(90deg, transparent, #69B99D) 1;
 }
 
 /* TAMANHO DA FONTE DESCRIÇÃO SERVICES */
@@ -235,5 +238,37 @@ p {
     width: 80px;
 }
 
+/* TAMANHO DA SEÇÃO CONTACTS */
+.contacts {
+    width: 100vw;
+    height: 600px;
+}
 
+/* TAMANHO DO BOTÃO DA SEÇÃO CONTACTS */
+.contacts-button {
+    width: 240px;
+}
 
+/* TAMANHO DO CONTEUDO ESQUERDO DA SEÇÃO CONTACTS */
+.services-left-content {
+    max-width: 430px;
+}
+
+/* TAMANHO DA FONTE DA SEÇÃO CONTACTS */
+.services-right-content p {
+    font-size: 18px;
+}
+
+/* MARGEM PARA LISTA DA SEÇÃO DE CONTATOS */
+.contacts-right-content li {
+    margin: 20px;
+}
+
+.first-section {
+    height: 600px;
+    background-color: #EDEDED;
+}
+
+.info-first-content {
+    max-width: 1100px;
+}

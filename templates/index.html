@@ -2,12 +2,6 @@
 
 {% block title %}Página Inicial - Retech.{% endblock %}
 
-{% block extracss %}
-<style>
-
-</style>
-{% endblock %}
-
 {% block content %}
 {% load static %}
 <section class="main centered">
@@ -66,15 +60,16 @@
     <div class="container centered">
         <div class="text-center title services-margin">
             <h1>Serviços</h1>
-            <p class="services-descrition">
-                Com mais de 10 anos no mercado, o Retech já conquistou clientes de inúmeros países com seus tratamentos
+            <p class="services-descrition text-colorize">
+                Com mais de 10 anos no mercado, a <span>Retech</span> já conquistou clientes de inúmeros países com seus
+                tratamentos
                 exclusivos e totalmente naturais
             </p>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-around">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col text-center ">
-            <div class="card services-card shadow-sm mx-auto">
+            <div class="card services-card shadow-sm ms-auto">
                 <div class="my-auto">
                     <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
                     <div class="card-body">
@@ -98,8 +93,8 @@
             </div>
         </div>
         <div class="col text-center">
-            <div class="card services-card shadow-sm mx-auto">
-                <div class="my-auto">
+            <div class="card services-card shadow-sm me-auto">
+                <div class="my-auto ">
                     <img src="{% static 'image/search.png' %}" class="mx-auto" alt="Marketplace">
                     <div class="card-body">
                         <h5 class="card-title">Marketplace</h5>
@@ -108,6 +103,46 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts centered">
+    <div class="container">
+        <div class="row">
+            <div class="col services-left-content">
+                <h1 class="title">Entre em contato com a gente!</h1>
+                <p>Entre em contato com a Retech, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
+                <button type="button" class="main-button contacts-button mt-4 text-center">
+                    {% load bootstrap_icons %}
+                    {% bs_icon 'whatsapp' extra_classes="me-2" size='20px' color='white' %}
+                    Entrar em contato
+                </button>
+            </div>
+            <div class="col separate">
+            </div>
+            <div class="col text-start contacts-right-content">
+                <ul>
+                    <li>
+                        <p>
+                            {% bs_icon 'telephone' extra_classes="me-2" size='20px' color='#69B99D' %}
+                            11 89988-8888
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            {% bs_icon 'geo-alt' extra_classes="me-2" size='20px' color='#69B99D' %}
+                            R. Pedro Porpino da Silva, 1181
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            {% bs_icon 'envelope' extra_classes="me-2" size='20px' color='#69B99D' %}
+                            contato@retech.com
+                        </p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
