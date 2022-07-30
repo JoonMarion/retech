@@ -1,6 +1,6 @@
 {% extends 'model/base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Página Inicial - Retech.{% endblock %}
 
 {% block extracss %}
 <style>
@@ -10,4 +10,106 @@
 
 {% block content %}
 {% load static %}
+<section class="main centered">
+    <div class="container">
+        <div class="row">
+            <div class="col main-left-content">
+                <h1 class="title">Encontre os pontos de descarte mais próximos de você</h1>
+                <button type="button" class="main-button mt-4">
+                    ONDE DESCARTAR?
+                </button>
+            </div>
+            <div class="col main-right-content text-center">
+                <img src="{% static 'image/main-card2.jpg' %}" alt="Card" class="Card">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about centered">
+    <div class="container">
+        <div class="row">
+            <div class="col centered text-center computer">
+                <img src="{% static 'image/computer.jpeg' %}" alt="Card" class="Card">
+            </div>
+            <div class="col about-right-content">
+                <h1 class="title">Sobre nós</h1>
+                <p>
+                    A Retech é uma empresa que irá revolucionar o descarte de lixo eletrônico, buscando ensinar a melhor
+                    forma de fazer o descarte e também temos o objetivo de mostrar onde estão os pontos de coleta mais
+                    próximos a você.
+                </p>
+                <br>
+                <p>
+                    Nossa missão é fazer com que você cidadão que possui um componente eletrônico, computadores,
+                    monitores e
+                    etc, que não funcionem ou que funcionem descarte o produto eletrônico da melhor forma possível, ou
+                    caso
+                    você esteja diante de um produto eletrônico defasado e não sabe o que fazer, temos o contato de
+                    algumas
+                    Ong’s que possam ser feitas doações deste produto, além de possibilitar a compra e venda de
+                    componentes
+                    eletrônicos.
+                </p>
+                <br>
+                <p>
+                    Nosso objetivo é conscientizar o cidadão sobre o descarte adequado do lixo eletrônico, além de
+                    favorecer
+                    que você consiga doar o seu produto eletrônico que está sem uso ou defasado.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="container centered">
+        <div class="text-center title services-margin">
+            <h1>Serviços</h1>
+            <p class="services-descrition">
+                Com mais de 10 anos no mercado, o Retech já conquistou clientes de inúmeros países com seus tratamentos
+                exclusivos e totalmente naturais
+            </p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-around">
+        <div class="col text-center ">
+            <div class="card services-card shadow-sm mx-auto">
+                <div class="my-auto">
+                    <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
+                    <div class="card-body">
+                        <h5 class="card-title">Pontos de Descarte</h5>
+                        <p>
+                            Encontre os pontos de descarte mais próximos de você.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card services-card shadow-sm mx-auto">
+                <div class="my-auto">
+                    <img src="{% static 'image/caridade.png' %}" class="mx-auto" alt="Faça uma doação">
+                    <div class="card-body">
+                        <h5 class="card-title">Doações</h5>
+                        <p class="card-text">Encontre uma forma de reutilizar o que pode não ser útil para você</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card services-card shadow-sm mx-auto">
+                <div class="my-auto">
+                    <img src="{% static 'image/search.png' %}" class="mx-auto" alt="Marketplace">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketplace</h5>
+                        <p>
+                            Compre ou venda peças de produtos eletrônicos
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

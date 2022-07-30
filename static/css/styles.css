@@ -24,8 +24,22 @@ a {
 }
 
 p {
-    font-family: 'DM Sans';
-    margin-bottom: 0px !important;
+    font-family: 'DM Sans', serif;
+    margin-bottom: 0 !important;
+}
+
+.title {
+    font-family: 'Poppins', serif;
+    font-size: 36px;
+    font-height: 54px;
+    color: #0f241d;
+    position: relative;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* LOGO RETECH */
@@ -34,7 +48,7 @@ p {
     width: 155px;
     height: 60px;
     top: 9px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     font-size: 40px;
     line-height: 60px;
     color: #000000 !important;
@@ -98,6 +112,128 @@ p {
     fill: #0f241d;
 }
 
-.main {
-    min-height: 63vh;
+/* TAMANHO DO CONTEÚDO ESQUERDO DA MAIN */
+.main-left-content {
+    max-width: 396px;
+    margin-top: 5%;
 }
+
+/* MAPA DA MAIN */
+.main {
+    width: 100vw;
+    height: 675px;
+    background: url("/static/image/main-card.jpg") no-repeat fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.main::before {
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(238, 238, 238, 0.7);
+}
+
+/* BOTÃO DA MAIN */
+.main-button {
+    width: 212px;
+    height: 50px;
+    background: #69B99D;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 500;
+    position: absolute;
+    border: none;
+}
+
+/* RIGTH CONTENT */
+.main-right-content img{
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    position: relative;
+}
+
+/* SOBRE NÓS IMAGEM */
+.computer img {
+    max-width: 438px;
+    height: min-content;
+}
+
+/* TAMANHO DA SEÇÃO SOBRE NÓS */
+.about {
+    width: 100vw;
+    height: 675px;
+}
+
+/* TAMANHO DO CONTEUDO DIREITO DA SEÇÃO ABOUT */
+.about-right-content {
+    width: 610px;
+}
+
+/* COR DO TEXTO DO ABOUT */
+.about-right-content p {
+    color: #767676;
+}
+
+/* ESTILIZANDO SEÇÃO SERVICES */
+.services {
+    background-color: rgba(221, 221, 221, 0.27);
+    height: 870px;
+}
+
+/* TAMANHO DA FONTE DESCRIÇÃO SERVICES */
+.services p {
+    font-size: 18px;
+}
+
+/* TAMANHO DO PARAGRAFO DESRIÇÃO SERVICES */
+.services-descrition {
+    width: 520px;
+}
+
+/* MARGIN SERVICES */
+.services-margin {
+    margin-top: 120px;
+    margin-bottom: 64px;
+}
+
+/* TAMANHO DO CARD DOS SERVICES */
+.services-card {
+    width: 350px;
+    height: 350px;
+    border: none;
+    border-bottom: #69B99D solid 4px;
+}
+
+.services-card:hover {
+    border-bottom: #69B99D solid 10px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* COR DOS TEXTOS DOS CARDS DOS SERVIÇOS */
+.services-card p {
+    color: #767676;
+}
+
+.services-card h5 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}
+
+/* TAMANHO DA IMAGEM DO CARD DOS SERVIÇOS */
+.services-card img {
+    width: 80px;
+}
+
+
+
