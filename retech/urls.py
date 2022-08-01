@@ -9,5 +9,7 @@ urlpatterns = [
     # HOME
     path('', home, name='home'),
 
+    # INFORMATION
     path('information/', information, name='information'),
+
 ]
