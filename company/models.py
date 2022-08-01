@@ -11,7 +11,7 @@ class Company(models.Model):
     description = models.TextField(blank=True)
     cnpj = models.CharField(max_length=14, null=False)
     address = models.OneToOneField('Address', on_delete=models.SET_NULL, null=True)
-    phone = models.CharField(max_length=11, blank=True, name='phone (ddd + number)')
+    phone = models.CharField(max_length=11, null=True)
     logo = models.ImageField(upload_to=upload_logo_formatter, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
