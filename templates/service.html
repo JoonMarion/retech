@@ -1,0 +1,11 @@
+{% extends 'model/base.html' %}
+
+{% block title %} Service {% endblock %}
+
+{% block content %}
+{% for m in model %}
+    <img src="{{ m.logo.url }}" >
+    <p>{{ m.address }}</p>
+    <p>{{ m.phone }}</p>
+{% endfor %}
+{% endblock %}

@@ -162,7 +162,9 @@ li {
     max-width: 550px;
     height: 100%;
     position: relative;
+    bottom:40px;
 }
+
 
 /* SOBRE NÓS IMAGEM */
 .computer img {
@@ -278,3 +280,4 @@ li {
 .info-section {
     height: 650px;
 }
+
