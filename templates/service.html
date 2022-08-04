@@ -8,8 +8,9 @@
     {% for m in model %}
         <div class="card" style="width: 17.375rem; height: 16.25rem;">
             <img src="{{ m.logo.url }}" style="height: 144px; padding-top: 10px">
-            <div class="card-body text-center" style="display: flex; justify-center: center; align-items: center;">
-                <p class="card-title">{{ m.address }}, {{ m.phone }}</p>
+            <div class="card-body text-center" style="display: flex; justify-center: center; align-items: center; flex-direction: column;">
+                <p class="card-title">{{ m.address }}</p>
+                <p>{{ m.phone }}<p>
             </div>
         </div>
     {% endfor %}
