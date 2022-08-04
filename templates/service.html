@@ -3,9 +3,16 @@
 {% block title %} Service {% endblock %}
 
 {% block content %}
-{% for m in model %}
-    <img src="{{ m.logo.url }}" >
-    <p>{{ m.address }}</p>
-    <p>{{ m.phone }}</p>
-{% endfor %}
+<div style="margin: 0 auto; width: 48.4375rem">
+    <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem">
+    {% for m in model %}
+        <div class="card" style="width: 17.375rem; height: 16.25rem;">
+            <img src="{{ m.logo.url }}" style="height: 144px; padding-top: 10px">
+            <div class="card-body text-center" style="display: flex; justify-center: center; align-items: center;">
+                <p class="card-title">{{ m.address }}, {{ m.phone }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
 {% endblock %}

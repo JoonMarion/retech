@@ -73,13 +73,15 @@
         <div class="col text-center ">
             <div class="card services-card shadow-sm ms-auto">
                 <div class="my-auto">
-                    <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
-                    <div class="card-body">
-                        <h5 class="card-title">Pontos de Descarte</h5>
-                        <p>
-                            Encontre os pontos de descarte mais próximos de você.
-                        </p>
-                    </div>
+                    <a href="{% url "service" %}" class="l">
+                        <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
+                        <div class="card-body">
+                            <h5 class="card-title">Pontos de Descarte</h5>
+                            <p>
+                                Encontre os pontos de descarte mais próximos de você.
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

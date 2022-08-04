@@ -10,7 +10,7 @@ class Company(models.Model):
     name = models.CharField(max_length=100, null=False, unique=True)
     description = models.TextField(blank=True)
     cnpj = models.CharField(max_length=14, null=False)
-    address = models.OneToOneField('Address', on_delete=models.SET_NULL, null=True)
+    address = models.ForeignKey('Address', on_delete=models.SET_NULL, null=True)
     phone = models.CharField(max_length=11, null=True)
     logo = models.ImageField(upload_to=upload_logo_formatter, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
