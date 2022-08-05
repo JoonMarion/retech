@@ -7,7 +7,7 @@ services:
     # referenciando que o dockerfile está no diretório atual
     build: .
     # inicializando o servidor do django
-    command: python manage.py runserver 
+    command: python manage.py runserver 0.0.0.0:8000
     # sincronizando os arquivos locais com o docker
     volumes:
       - .:/Retech
