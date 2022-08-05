@@ -1,5 +1,5 @@
 # imagem base que será utilizada
-FROM python:3.10.0
+FROM python:3.8.0
 
 # criando um diretório
 RUN mkdir /Retech

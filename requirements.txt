@@ -5,7 +5,12 @@ charset-normalizer==2.1.0
 Django==4.0.6
 django-bootstrap-icons==0.8.1
 idna==3.3
-requests==2.28.1
-sqlparse==0.4.2
-urllib3==1.26.11
+joblib==1.1.0
+numpy==1.23.1
 Pillow==9.1.1
+requests==2.28.1
+scikit-learn==1.1.1
+scipy==1.9.0
+sqlparse==0.4.2
+threadpoolctl==3.1.0
+urllib3==1.26.11
