@@ -3,8 +3,13 @@
 {% block title %} Service {% endblock %}
 
 {% block content %}
-<div style="margin: 0 auto; width: 48.4375rem">
-    <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem">
+<div style="margin: 0 auto; width: 80rem">
+    <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control shadow" placeholder="Buscar...">
+        </form>
+    </div>
+    <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem; margin-top: 20px">
     {% for m in model %}
         <div class="card" style="width: 17.375rem; height: 16.25rem;">
             <img src="{{ m.logo.url }}" style="height: 144px; padding-top: 10px">
