@@ -6,7 +6,8 @@
 <div style="margin: 0 auto; width: 80rem">
     <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
         <form method="get">
-            <input type="text" id="search" name="search" class="form-control shadow" placeholder="Buscar...">
+            <input type="text" id="search" name="search" class="form-control shadow" placeholder="Buscar..."
+                value="{{ request.GET.search }}">
         </form>
     </div>
     <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem; margin-top: 20px">
@@ -19,17 +20,7 @@
             </div>
         </div>
     {% endfor %}
-    <div>
-        <ul class="pagination">
-        {% if db.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ db.previous_page_number }}">Previous</a></li>
-        {% endif %}
-            <li class="page-item"><a class="page-link" href="?page={{db.number}}">{{ db.number }}</a></li>
-        {% if db.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ db.next_page_number }}">Next</a></li>
-        {% endif %}
-        </ul>
-    </div>
+    {% include "includes/pagination.html" %}
     </div>
 </div>
 {% endblock %}
