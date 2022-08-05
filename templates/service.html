@@ -10,7 +10,7 @@
         </form>
     </div>
     <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem; margin-top: 20px">
-    {% for m in model %}
+    {% for m in db %}
         <div class="card" style="width: 17.375rem; height: 16.25rem;">
             <img src="{{ m.logo.url }}" style="height: 144px; padding-top: 10px">
             <div class="card-body text-center" style="display: flex; justify-center: center; align-items: center; flex-direction: column;">
@@ -19,6 +19,17 @@
             </div>
         </div>
     {% endfor %}
+    <div>
+        <ul class="pagination">
+        {% if db.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ db.previous_page_number }}">Previous</a></li>
+        {% endif %}
+            <li class="page-item"><a class="page-link" href="#">{{ db.number }}</a></li>
+        {% if db.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ db.next_page_number }}">Next</a></li>
+        {% endif %}
+        </ul>
+    </div>
     </div>
 </div>
 {% endblock %}
