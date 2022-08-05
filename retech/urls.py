@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # HOME
-    path('', home, name='home'),
+    path('/', home, name='home'),
 
     # INFORMATION
     path('information/', information, name='information'),
