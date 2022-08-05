@@ -1,0 +1,16 @@
+# versão do compose file format
+version: "3.8"
+# definindo um service web
+services:
+  web:
+    container_name: api-django
+    # referenciando que o dockerfile está no diretório atual
+    build: .
+    # inicializando o servidor do django
+    command: python manage.py runserver 
+    # sincronizando os arquivos locais com o docker
+    volumes:
+      - .:/Retech
+    # expondo porta 8000
+    ports: 
+      - 8000:8000
