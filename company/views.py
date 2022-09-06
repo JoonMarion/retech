@@ -7,10 +7,14 @@ from django.db.models import Q
 
 def service(request):
     data = {}
-    search = request.GET.get('search')
+    search = request.GET.get('search').strip()
     if search:
-        search2 = remove_text_accents(search)
-        model = Company.objects.filter(Q(address__city__icontains=search) | Q(address__city__icontains=search2) | Q(address__state__icontains=search)).order_by('created_at')
+        search_without_accents = remove_text_accents(search)
+        model = Company.objects.filter(
+            Q(address__city__icontains=search) | 
+            Q(address__city__icontains=search_without_accents) | 
+            Q(address__state__icontains=search)
+        ).order_by('created_at')
     else:
         model = Company.objects.all().order_by('created_at')
     for obj in model:
