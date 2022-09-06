@@ -4,6 +4,14 @@
 
 {% block content %}
 {% load static %}
+<div class="btnPesquisar">
+    <a href="{% url 'service' %}">
+        <button type="button" class="information-btn shadow">
+            Onde descartar?
+             <img src="{% static 'image/lupa.png' %}" alt="lupa" class="lupa" style="width: 50px;">
+        </button>
+    </a>
+</div>
 <section class="info-section centered bg-gray">
     <div class="container text-start info-first-content">
         <h1 class="title">

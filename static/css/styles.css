@@ -298,3 +298,18 @@ li {
     border-bottom: #69B99D solid 10px;
     transform: scale(1.1); 
 }
+
+.information-btn {
+    width: 250px;
+    height: 80px;
+    background: #69DDB4;
+    border-radius: 12px;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    position: fixed;
+    border: none;
+	float: bottom;
+	bottom: 80px;
+	right: 40px;
+}
