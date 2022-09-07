@@ -7,21 +7,21 @@ from information.views import information
 from company.views import service
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
-                  # HOME
-                  path('', home, name='home'),
+    # HOME
+    path('', home, name='home'),
 
-                  # INFORMATION
-                  path('information/', information, name='information'),
+    # INFORMATION
+    path('information/', information, name='information'),
 
-                  # service
-                  path('service/', service, name='service'),
+    # SERVICE
+    path('service/', service, name='service'),
 
-                  # AUTH
-                  path('accounts/', include('accounts.urls')),
+    # AUTH
+    path('accounts/', include('accounts.urls')),
 
-                  # LOGIN
-                  path('accounts/', include('django.contrib.auth.urls')),
+    # LOGIN
+    path('accounts/', include('django.contrib.auth.urls')),
 
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
