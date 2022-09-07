@@ -93,13 +93,34 @@ li {
 
 .navbar
 .navbar-nav
-.nav-item a:hover {
+.nav-item .nav-link:hover {
     color: #69b99d;
     border-bottom: 2px solid #69b99d;
 }
 
 .navbar-nav {
     margin-right: 131px;
+}
+
+/* DROPDOWN PERFIL */
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown > button {
+    border: none;
+    background-color: #F8F9FA;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+    color: white;
+    background-color: #69b99d;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: #69b99d;
 }
 
 /* ESTILIZAÇÃO DO FOOTER */
