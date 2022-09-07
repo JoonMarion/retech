@@ -1,0 +1,26 @@
+{% extends 'model/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+{% block content %}
+<h2 class="card-title text-center mb-4" style="margin-top: 5%;"><strong>Registrar</strong></h2>
+<div class="login centered">
+    <div class="text-left card-login shadow">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <input type="hidden" name="next" value="{{ next }}">
+                <div class="col text-left text-center" style="margin-top: 25px;">
+                    {{ form.as_p }}
+                    <div class="d-flex ms-4 mt-4 justify-content-center">
+                        <button type="submit reset" class="btn-login">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

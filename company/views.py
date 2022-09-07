@@ -7,7 +7,7 @@ from django.db.models import Q
 
 def service(request):
     data = {}
-    search = request.GET.get('search').strip()
+    search = request.GET.get('search')
     if search:
         search_without_accents = remove_text_accents(search)
         model = Company.objects.filter(

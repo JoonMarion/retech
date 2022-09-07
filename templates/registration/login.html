@@ -1,0 +1,37 @@
+{% extends 'model/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+{% block content %}
+<h2 class="card-title text-center mb-4" style="margin-top: 5%;"><strong>Login</strong></h2>
+<div class="login centered">
+    <div class="text-left card-login shadow">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="row">
+                <input type="hidden" name="next" value="{{ next }}">
+                <div class="col text-left text-center" style="margin-top: 25px;">
+
+                    <p class="login-inputs mt-4">
+                        <input type="text" name="username" class="input-style" placeholder="Email">
+                    </p>
+                    <p class="login-inputs mt-4">
+                        <input type="password" name="password" class="input-style" placeholder="Senha">
+                    </p>
+                    <div class="d-flex ms-4 mt-4 justify-content-between">
+                        <button type="submit reset" class="btn-login">ENTRAR</button>
+                        <a class="me-4 mt-2 text-forget-pass text-login-hover" href="{% url 'password_reset' %}">Esqueceu
+                            sua senha?</a>
+                    </div>
+                    <div class="text-start ms-4">
+                        <p class="mt-4">Não possui uma conta? <a class="text-login-hover" href="/accounts/register/">Registre-se</a></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
