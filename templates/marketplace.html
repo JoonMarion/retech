@@ -1,0 +1,18 @@
+{% for produto in produtos %}
+    {% if produto.estado == 'A' %}
+        <img src="{{produto.img_prod.url}}">
+        <br>
+        {{produto.nome_prod}}
+        {% if produto.preco_prod %}
+            {{produto.preco_prod}}
+        {% else %}
+            Doação
+        {% endif %}
+        <br>
+        {{produto.descricao_prod}}
+        <br>
+        {{produto.endereco_prod.city}}
+        {{produto.endereco_prod.state}}
+        
+    {% endif %}
+{% endfor %}

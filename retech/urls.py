@@ -24,5 +24,8 @@ urlpatterns = [
     # LOGIN
     path('accounts/', include('django.contrib.auth.urls')),
 
+    # MARKETPLACE
+    path('marketplace/', include('marketplace.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
