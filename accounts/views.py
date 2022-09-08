@@ -8,8 +8,9 @@ import uuid
 def signUp(request):
 
     if request.method == 'POST':
-        if request.POST['senha1'] == request.POST['senha2']:
-            username = request.POST['nome'] + str(uuid.uuid4())
+
+        if request.POST['senha1'] and request.POST['senha1'] == request.POST['senha2']:
+            username = request.POST['nome'].capitalize() + str(uuid.uuid4())
             novo_usuario = User.objects.create_user(
                 username=username,
                 email=request.POST['email'],
@@ -17,18 +18,18 @@ def signUp(request):
             )
 
             novo_endereco = Address.objects.create(
-                street=request.POST['rua'],
+                street=request.POST['rua'].capitalize(),
                 number=request.POST['numero'],
-                complement=request.POST['complemento'],
-                district=request.POST['bairro'],
-                city=request.POST['cidade'],
-                state=request.POST['estado'],
+                complement=request.POST['complemento'].capitalize(),
+                district=request.POST['bairro'].capitalize(),
+                city=request.POST['cidade'].capitalize(),
+                state=request.POST['estado'].capitalize(),
                 cep=request.POST['cep'],
             )
 
             novo_perfil = Perfil.objects.create(
-                name=request.POST['nome'],
-                lastname=request.POST['sobrenome'],
+                name=request.POST['nome'].capitalize(),
+                lastname=request.POST['sobrenome'].capitalize(),
                 birth_date=request.POST['data'],
                 user=novo_usuario,
                 address=novo_endereco,
@@ -40,7 +41,5 @@ def signUp(request):
     return render(request, 'registration/register.html')
 
 def profile(request):
-    print(request.user)
-
-    print(Perfil.objects.get(user=request.user).name)
-    return render(request, 'registration/profile.html', {'perfil': Perfil.objects.get(user=request.user)})
+    perfil = Perfil.objects.get(user=request.user)
+    return render(request, 'registration/profile.html', {'perfil': perfil})
