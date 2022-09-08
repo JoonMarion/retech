@@ -10,9 +10,9 @@
             <div class="col main-left-content">
                 <h1 class="title">Encontre os pontos de descarte mais próximos de você</h1>
                 <a href="/service">
-                <button type="button" class="main-button mt-4" >
-                    ONDE DESCARTAR?
-                </button>
+                    <button type="button" class="main-button mt-4">
+                        ONDE DESCARTAR?
+                    </button>
                 </a>
             </div>
             <div class="col main-right-content text-center">
@@ -37,14 +37,14 @@
         <div class="col text-center ">
             <div class="card services-card shadow-sm ms-auto">
                 <div class="my-auto">
-                    <a href="{% url "service" %}" class="l">
-                        <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
-                        <div class="card-body">
-                            <h5 class="card-title">Pontos de Descarte</h5>
-                            <p>
-                                Encontre os pontos de descarte mais próximos de você.
-                            </p>
-                        </div>
+                    <a href="{% url 'service' %}">
+                    <img src="{% static 'image/loupe.png' %}" class="mx-auto" alt="Pontos de descarte">
+                    <div class="card-body">
+                        <h5 class="card-title">Pontos de Descarte</h5>
+                        <p>
+                            Encontre os pontos de descarte mais próximos de você.
+                        </p>
+                    </div>
                     </a>
                 </div>
             </div>
@@ -63,20 +63,22 @@
         <div class="col text-center">
             <div class="card services-card shadow-sm me-auto">
                 <div class="my-auto ">
-                    <img src="{% static 'image/search.png' %}" class="mx-auto" alt="Marketplace">
-                    <div class="card-body">
-                        <h5 class="card-title">Marketplace</h5>
-                        <p>
-                            Compre ou venda peças de produtos eletrônicos
-                        </p>
-                    </div>
+                    <a href="{% url 'marketplace' %}">
+                        <img src="{% static 'image/search.png' %}" class="mx-auto" alt="Marketplace">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketplace</h5>
+                            <p>
+                                Compre ou venda peças de produtos eletrônicos
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id= "Sobre" class="about centered">
+<section id="Sobre" class="about centered">
     <div class="container">
         <div class="row">
             <div class="col centered text-center computer">

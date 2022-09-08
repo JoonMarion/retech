@@ -1,18 +1,72 @@
-{% for produto in produtos %}
-    {% if produto.estado == 'A' %}
-        <img src="{{produto.img_prod.url}}">
-        <br>
-        {{produto.nome_prod}}
-        {% if produto.preco_prod %}
-            {{produto.preco_prod}}
-        {% else %}
-            Doação
+{% extends 'model/base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block extracss %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="botao-flutuante">
+    <a href="{% url 'service' %}">
+        <button type="button" class="information-btn shadow">
+            Onde descartar?
+            <img src="{% static 'image/lupa.png' %}" alt="lupa" class="lupa" style="width: 45px;">
+        </button>
+    </a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col m-3">
+            <h1 class="" style="font-weight: bold;">Marketplace</h1>
+            <button class="btn-login m-2" style="width: 160px; height: 34px;">Anunciar</button>
+        </div>
+        <div class="col m-3">
+            <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
+                <form method="get">
+                    <input type="text" id="search" name="search" class="form-control input-style marketplace-search"
+                           placeholder="Pesquisar"
+                           value="{{ request.GET.search }}">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem;">
+        {% for produto in produtos %}
+        {% if produto.estado == 'A' %}
+            <div class="card card-marketplace mt-4" style="width: 20rem;">
+                <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto">
+                <div class="card-body">
+                    <h5 class="card-title">{{produto.nome_prod}}</h5>
+                    <div class="value-product">
+                        {% if produto.preco_prod %}
+                        <p class="card-text float-end">
+                            R$ {{produto.preco_prod}}
+                        </p>
+
+                        {% else %}
+                        <p class="card-text ms-4 float-end">
+                            Doação
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="description-product">
+                        <p>
+                            {{produto.descricao_prod}}
+                        </p>
+                        <p>{{produto.endereco_prod.city}} - {{produto.endereco_prod.state}}</p>
+                    </div>
+                </div>
+            </div>
         {% endif %}
-        <br>
-        {{produto.descricao_prod}}
-        <br>
-        {{produto.endereco_prod.city}}
-        {{produto.endereco_prod.state}}
-        
-    {% endif %}
-{% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+    {% endblock %}

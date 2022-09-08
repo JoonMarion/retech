@@ -195,9 +195,9 @@ li {
 }
 
 /* TAMANHO DA SEÇÃO SOBRE NÓS */
-.about {
+.services {
     width: 100vw;
-    height: 675px;
+    height: 870px;
 }
 
 /* TAMANHO DO CONTEUDO DIREITO DA SEÇÃO ABOUT */
@@ -206,7 +206,7 @@ li {
 }
 
 /* ESTILIZANDO SEÇÃO SERVICES */
-.services {
+.about {
     background-color: rgba(221, 221, 221, 0.27);
     height: 870px;
     border-bottom-width: 1px;
@@ -428,4 +428,19 @@ section {
     font-size: 1.5rem;
     font-family: 'Poppins', serif;
     font-style: normal;
+}
+
+.marketplace-search {
+    height: 50px !important;
+}
+
+.value-product p {
+    color: #69B99D;
+    font-size: 1.2rem;
+    font-family: 'Poppins', serif;
+    font-style: normal;
+}
+
+.description-product p {
+    color: #767676;
 }
