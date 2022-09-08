@@ -6,16 +6,96 @@
 {% endblock %}
 
 {% block content %}
-<h2 class="card-title text-center mb-4" style="margin-top: 5%;"><strong>Registrar</strong></h2>
-<div class="login centered">
-    <div class="text-left card-login shadow">
+<h2 class="card-title text-center mb-4" style="margin-top: 3%;"><strong>Cadastro</strong></h2>
+<div class="centered">
+    <div class="text-left card-register shadow p-4">
+        <div class="col text-left">
+            <p class="register-text">Dados pessoais</p>
+            <div class="register-line"></div>
+        </div>
         <form method="post">
             {% csrf_token %}
             <div class="row">
                 <input type="hidden" name="next" value="{{ next }}">
-                <div class="col text-left text-center" style="margin-top: 25px;">
-                    {{ form.as_p }}
-                    <div class="d-flex ms-4 mt-4 justify-content-center">
+                <div class="col text-left" style="margin-top: 15px;">
+                    <p class="login-inputs">
+                        <input type="text" name="nome" class="register-input-style" placeholder="Nome">
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="sobrenome" class="register-input-style"
+                                       placeholder="Sobrenome">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="date" name="data" class="register-input-style"
+                                       placeholder="Data de nascimento" onfocus="(this.type='date')"
+                                       onblur="(this.type='text')">
+                            </p>
+                        </div>
+                    </div>
+                    <p class="login-inputs mt-4">
+                        <input type="email" name="email" class="register-input-style" placeholder="Email">
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="password" name="senha" class="register-input-style" placeholder="Senha">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="password" name="senha" class="register-input-style" placeholder="Senha">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col text-left" style="margin-top: 25px;">
+                        <p class="register-text">Endereço</p>
+                        <div class="register-line"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="cep" class="register-input-style" placeholder="CEP">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="cidade" class="register-input-style" placeholder="Cidade">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="estado" class="register-input-style" placeholder="Estado">
+                            </p>
+                        </div>
+                    </div>
+                    <p class="login-inputs mt-4">
+                        <input type="text" name="bairro" class="register-input-style" placeholder="Bairro">
+                    </p>
+                    <p class="login-inputs mt-4">
+                        <input type="text" name="rua" class="register-input-style" placeholder="Rua">
+                    </p>
+                    <div class="row">
+                        <div class="col-3">
+                            <p class="login-inputs mt-4">
+                                <input type="number" name="numero" class="register-input-style" placeholder="Número">
+                            </p>
+                        </div>
+                        <div class="col-9">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="complemento" class="register-input-style"
+                                       placeholder="Complemento">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-start">
+                        <p class="mt-4">Já possui uma conta? <a class="text-login-hover" href="/accounts/login/">Entrar</a>
+                        </p>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
                         <button type="submit reset" class="btn-login">Registrar</button>
                     </div>
                 </div>
