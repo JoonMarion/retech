@@ -394,14 +394,13 @@ section {
     color: rgba(105, 185, 157, 0.84);
 }
 
-.card-register{
+.card-register {
     width: 600px;
     background: #F4F4F4;
     font-weight: 500;
     border: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    margin-bottom: 80px;
 }
 
 .register-text {
@@ -422,4 +421,11 @@ section {
     border: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+}
+
+.my-profile-text h2 {
+    color: #69B99D;
+    font-size: 1.5rem;
+    font-family: 'Poppins', serif;
+    font-style: normal;
 }
