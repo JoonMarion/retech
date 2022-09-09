@@ -11,12 +11,14 @@
         </select>
     </form>
     <form method="post">
-    <p><input type="text" placeholder="Título"></p>
-    {% if contexto %}
-        <p><input type="{{ contexto.form }}" placeholder="Preço"></p>
-    {% endif %}
-    <p><input type="text" placeholder="Categoria"></p>
-    <p><textarea rows="4" cols="50" placeholder="Descrição..."></textarea></p>
-    <input type="submit" value="Publicar">
+        {% csrf_token %}
+        <input type="hidden" value="{{  request.GET.tipoanuncio  }}">
+        <p><input type="text" placeholder="Título"></p>
+        {% if contexto %}
+            <p><input type="{{ contexto.inputtype }}" placeholder="Preço"></p>
+        {% endif %}
+        <p><input type="text" placeholder="Categoria"></p>
+        <p><textarea rows="4" cols="50" placeholder="Descrição..."></textarea></p>
+        <input type="submit" value="Publicar">
     </form>
 {% endblock %}
