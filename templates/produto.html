@@ -1,0 +1,13 @@
+{% extends 'model/base.html' %}
+
+
+{% block content %}
+    <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto" style='width:300px'>
+    <p>{{ produto.nome_prod|title }}</p>
+    <p>{{ produto.preco_prod }}</p>
+    <p>{{ produto.descricao_prod|title }}</p>
+    <p>{{ produto.cidade|title }}</p>
+    <p>{{ produto.categoria|title }}</p>
+    <p>Anunciada por @{{ usuario.name|lower }}_{{ usuario.lastname|lower }}</p>
+
+{% endblock %}

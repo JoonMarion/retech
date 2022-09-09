@@ -48,28 +48,31 @@
     <div class="row row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem;">
         {% for produto in produtos %}
             <div class="card card-marketplace mt-4" style="width: 20rem;">
-                <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto">
-                <div class="card-body">
-                    <h5 class="card-title">{{produto.nome_prod}}</h5>
-                    <div class="value-product">
-                        {% if produto.preco_prod %}
-                        <p class="card-text float-end">
-                            R$ {{produto.preco_prod}}
-                        </p>
-
-                        {% else %}
-                        <p class="card-text ms-4 float-end">
-                            Doação
-                        </p>
-                        {% endif %}
+                {% if produto.preco_prod %}
+                <a href="{% url 'descricao_produto' tipo='venda' name=produto.nome_prod cod=produto.id %}">
+                {% endif %}
+                    <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto">
+                    <div class="card-body">
+                        <h5 class="card-title">{{produto.nome_prod}}</h5>
+                        <div class="value-product">
+                            {% if produto.preco_prod %}
+                            <p class="card-text float-end">
+                                R$ {{produto.preco_prod}}
+                            </p>
+                            {% else %}
+                            <p class="card-text ms-4 float-end">
+                                Doação
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="description-product">
+                            <p>
+                                {{produto.descricao_prod}}
+                            </p>
+                            <p>{{produto.cidade}}</p>
+                        </div>
                     </div>
-                    <div class="description-product">
-                        <p>
-                            {{produto.descricao_prod}}
-                        </p>
-                        <p>{{produto.endereco_prod.city}} - {{produto.endereco_prod.state}}</p>
-                    </div>
-                </div>
+                </a>
             </div>
         {% endfor %}
     </div>

@@ -1,9 +1,11 @@
 from random import shuffle
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import AnuncioVenda, AnuncioDoacao
 from company.models import Address
 from .models import AnuncioVenda, AnuncioDoacao
 from accounts.models import Perfil
+from django.core.files.storage import FileSystemStorage
+import uuid
 
 
 # Create your views here.
@@ -18,31 +20,53 @@ def anunciar(request):
     contexto = {}
     if request.method == 'GET':
         if request.GET.get('tipoanuncio') == 'venda':
-            contexto = {'inputtype': 'number">'}
+            contexto = {'inputtype': 'number'}
         
         if request.GET.get('tipoanuncio') == 'doacao':
             contexto = {'inputtype': 'hidden'}
 
     if request.method == 'POST':
-        if request.POST.get('tipoanuncio') == 'venda':
+        tipoanuncio = request.POST.get('tipoanuncio')
+        print(tipoanuncio)
+        if tipoanuncio == 'venda':
             novo_anuncio = AnuncioVenda.objects.create(
-                nome_prod=request.POST['titulo'],
-                descricao_prod=request.POST['descricao'],
-                categoria=request.POST['categoria'],
-                preco_prod=request.POST['preco'],
-                cidade=request.POST['cidade'],
+                nome_prod=request.POST.get('titulo'),
+                categoria=request.POST.get('categoria'),
+                descricao_prod=request.POST.get('descricao'),
+                preco_prod=request.POST.get('preco'),
+                estado="A",
                 user=request.user,
+                img_prod=request.FILES.get('image'),
+                cidade=request.POST.get('cidade')
             )
-
-        if request.POST.get('tipoanuncio') == 'doacao':
+            return redirect('marketplace')
+        
+        if tipoanuncio == 'doacao':
             novo_anuncio = AnuncioDoacao.objects.create(
-                nome_prod=request.POST['titulo'],
-                descricao_prod=request.POST['descricao'],
-                categoria=request.POST['categoria'],
-                cidade=request.POST['cidade'],
+                nome_prod=request.POST.get('titulo'),
+                categoria=request.POST.get('categoria'),
+                descricao_prod=request.POST.get('descricao'),
+                estado="A",
                 user=request.user,
+                img_prod=request.FILES.get('image'),
+                cidade=request.POST.get('cidade')
             )
 
+            return redirect('marketplace')
 
 
     return render(request, 'anunciar.html', {'contexto': contexto, 'usuario': usuario})
+
+
+def descricao_produto(request, tipo, name, cod):
+    usuario = Perfil.objects.get(user=request.user)
+    produto = None
+    print(cod)
+    if tipo == 'venda':
+        produto = AnuncioVenda.objects.get(pk=cod)
+        produto = produto
+    if tipo == 'doacao':
+        produto = AnuncioVenda.objects.get(pk=cod)
+        produto = produto
+    
+    return render (request, 'produto.html', {'produto': produto, 'usuario': usuario} )

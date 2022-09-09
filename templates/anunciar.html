@@ -19,9 +19,9 @@
                     <option value="doacao" {% if request.GET.tipoanuncio == 'doacao' %} selected {% endif %}>Doação</option>
                 </select>
             </form>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="hidden" value="{{  request.GET.tipoanuncio  }}">
+                <input type="hidden" name="tipoanuncio" value="{{  request.GET.tipoanuncio  }}">
                 <p><input class="input-style anuncio mb-3" type="text" placeholder="Título" name="titulo"></p>
                 {% if contexto %}
                 <p><input class="input-style anuncio mb-3" type="{{ contexto.inputtype }}" placeholder="Preço" name="preco"></p>
@@ -29,6 +29,7 @@
                 <p><input class="input-style anuncio mb-3" type="text" placeholder="Categoria" name="categoria"></p>
                 <p><textarea class="input-style description mb-3" rows="4" cols="50" placeholder="Descrição..." name="descricao"></textarea></p>
                 <p><input class="input-style anuncio mb-3" type="text" name="cidade" placeholder="Cidade"></p>
+                <p><input class="input-style anuncio mb-3" type="file" name="image" placeholder="Imagem"></p>
                 <button type="submit" class="btn-login" style="width: 160px; height: 34px; margin: 0 !important">Publicar</button>
             </form>
         </div>
