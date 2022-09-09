@@ -67,7 +67,7 @@ li {
 
 /* LOGO RETECH FOOTER */
 .footer {
-    top: 0px !important;
+    flex-shrink: 0;
     margin-left: 0px !important;
 }
 

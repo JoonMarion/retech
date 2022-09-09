@@ -20,7 +20,7 @@
 </div>
 <div class="container mb-4">
     <div class="row">
-        <div class="col m-3">
+        <div class="col m-4 ms-5">
             <h1 class="" style="font-weight: bold;">Marketplace</h1>
                 {% if request.user.is_authenticated %}
                     <a href="{% url 'anunciar' %}">
@@ -31,10 +31,9 @@
                         <button class="btn-login m-2" style="width: 160px; height: 34px; margin: 0 !important">Anunciar</button>
                     </a>
                 {% endif %}
-           
         </div>
         <div class="col m-3">
-            <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
+            <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2 mt-4" style="text-align: right;">
                 <form method="get">
                     <input type="text" id="search" name="search" class="form-control input-style marketplace-search"
                            placeholder="Pesquisar"
@@ -45,7 +44,7 @@
     </div>
 </div>
 
-<div class="container-fluid" style="margin-bottom: 70px">
+<div class="container-fluid" style="margin-bottom: 95px;">
     <div class="row row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem;">
         {% for produto in produtos %}
             <div class="card card-marketplace mt-4" style="width: 20rem;">

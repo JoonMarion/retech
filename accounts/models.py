@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from company.models import Address
 
+
 # Create your models here.
 class Perfil(models.Model):
     name = models.CharField(max_length=100)
@@ -11,4 +12,4 @@ class Perfil(models.Model):
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.username
+        return self.user
