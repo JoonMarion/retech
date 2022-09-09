@@ -18,11 +18,14 @@
         </button>
     </a>
 </div>
-<div class="container">
+<div class="container mb-4">
     <div class="row">
         <div class="col m-3">
             <h1 class="" style="font-weight: bold;">Marketplace</h1>
-            <button class="btn-login m-2" style="width: 160px; height: 34px;">Anunciar</button>
+            <a href="{% url 'anunciar' %}">
+                <button class="btn-login m-2" style="width: 160px; height: 34px; margin: 0 !important">Anunciar</button>
+            </a>
+            
         </div>
         <div class="col m-3">
             <div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
@@ -36,10 +39,9 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 70px">
     <div class="row row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem;">
         {% for produto in produtos %}
-        {% if produto.estado == 'A' %}
             <div class="card card-marketplace mt-4" style="width: 20rem;">
                 <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto">
                 <div class="card-body">
@@ -64,7 +66,6 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
         {% endfor %}
     </div>
 </div>

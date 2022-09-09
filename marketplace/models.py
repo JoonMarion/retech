@@ -1,5 +1,6 @@
 from django.db import models
 from company.models import Address
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Anuncio(models.Model):
@@ -14,9 +15,11 @@ class Anuncio(models.Model):
     nome_prod = models.CharField(max_length=100, verbose_name='Nome do Produto', null=False)
     descricao_prod = models.TextField(verbose_name='Descrição do Produto')
     quantidade_prod = models.IntegerField(verbose_name='Quantidade do Produto')
+    categoria = models.CharField(max_length=100, verbose_name='Categoria do Produto', default='Outros')
     endereco_prod = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço do Produto')
     img_prod = models.ImageField(upload_to='marketplace', null=True, blank=True, verbose_name='Imagem do Produto')
     estado = models.CharField(max_length=1, choices=STATE_CHOICES, default='A', verbose_name='Estado do Anúncio')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Usuário')
 
     def __str__(self):
         return self.nome_prod

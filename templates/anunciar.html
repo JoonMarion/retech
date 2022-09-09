@@ -1,0 +1,22 @@
+{% extends 'model/base.html' %}
+
+{% block content %}
+   {{ request.user}}
+    <form method="get">
+        <label for="tipo-anuncio">Escolha o tipo de anuncio:</label>
+        <select id="tipo-anuncio" name="tipoanuncio" onchange="this.form.submit()">
+            <option value="" disabled selected>Selecione sua opção</option>
+            <option value="venda" {% if request.GET.tipoanuncio == 'venda' %} selected {% endif %}>Venda</option>
+            <option value="doacao" {% if request.GET.tipoanuncio == 'doacao' %} selected {% endif %}>Doacao</option>
+        </select>
+    </form>
+    <form method="post">
+    <p><input type="text" placeholder="Título"></p>
+    {% if contexto %}
+        <p><input type="{{ contexto.form }}" placeholder="Preço"></p>
+    {% endif %}
+    <p><input type="text" placeholder="Categoria"></p>
+    <p><textarea rows="4" cols="50" placeholder="Descrição..."></textarea></p>
+    <input type="submit" value="Publicar">
+    </form>
+{% endblock %}
