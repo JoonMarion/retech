@@ -24,20 +24,25 @@ def anunciar(request):
             contexto = {'inputtype': 'hidden'}
 
     if request.method == 'POST':
-        novo_endereco = Address(
-            city=request.POST['cidade'].capitalize(),
-            state=request.POST['estado'].upper(),
-        )
-        novo_endereco.save()
-        if request.POST['tipoanuncio'] == 'venda':
-            novo_anuncio = AnuncioVenda(
-                title=request.POST['titulo'],
-                description=request.POST['descricao'],
-                price=request.POST['preco'],
-                address=novo_endereco,
+        if request.POST.get('tipoanuncio') == 'venda':
+            novo_anuncio = AnuncioVenda.objects.create(
+                nome_prod=request.POST['titulo'],
+                descricao_prod=request.POST['descricao'],
+                categoria=request.POST['categoria'],
+                preco_prod=request.POST['preco'],
+                cidade=request.POST['cidade'],
                 user=request.user,
             )
-            novo_anuncio.save()
-            return redirect('/marketplace')
+
+        if request.POST.get('tipoanuncio') == 'doacao':
+            novo_anuncio = AnuncioDoacao.objects.create(
+                nome_prod=request.POST['titulo'],
+                descricao_prod=request.POST['descricao'],
+                categoria=request.POST['categoria'],
+                cidade=request.POST['cidade'],
+                user=request.user,
+            )
+
+
 
     return render(request, 'anunciar.html', {'contexto': contexto, 'usuario': usuario})

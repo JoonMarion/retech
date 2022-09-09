@@ -49,13 +49,13 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = "Address's"
 
-    street = models.CharField(max_length=100)
-    number = models.IntegerField()
-    district = models.CharField(max_length=100, null=True)
-    complement = models.CharField(max_length=100, blank=True)
+    street = models.CharField(max_length=100, null=True, default='')
+    number = models.IntegerField(default=0)
+    district = models.CharField(max_length=100, null=True, default='')
+    complement = models.CharField(max_length=100, null=True, default='')
     city = models.CharField(max_length=100)
-    state = models.CharField(max_length=2)
-    cep = models.CharField(max_length=8, null=True)
+    state = models.CharField(max_length=2, default='')
+    cep = models.CharField(max_length=8, null=True, default='')
 
     def __str__(self):
-        return self.street + ', ' + str(self.number) + ', ' + self.city + ' - ' + self.state 
+        return f'{self.street + ", " + str(self.number) + ", " + self.city + " - " + self.state}'
