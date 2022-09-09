@@ -435,7 +435,7 @@ section {
 }
 
 .card-marketplace h5 {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -451,4 +451,21 @@ section {
 
 .description-product p {
     color: #767676;
+}
+
+.container h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.anuncio {
+    width: 300px !important;
+}
+
+.description {
+    width: 300px !important;
+    height: 150px !important;
 }

@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import AnuncioVenda, AnuncioDoacao
 from company.models import Address
 from .models import AnuncioVenda, AnuncioDoacao
+from accounts.models import Perfil
 
 
 # Create your views here.
@@ -13,6 +14,7 @@ def marketplace(request):
 
 
 def anunciar(request):
+    usuario = Perfil.objects.get(user=request.user)
     contexto = {}
     if request.method == 'GET':
         if request.GET.get('tipoanuncio') == 'venda':
@@ -38,7 +40,4 @@ def anunciar(request):
             novo_anuncio.save()
             return redirect('/marketplace')
 
-
-
-
-    return render(request, 'anunciar.html', {'contexto': contexto})
+    return render(request, 'anunciar.html', {'contexto': contexto, 'usuario': usuario})

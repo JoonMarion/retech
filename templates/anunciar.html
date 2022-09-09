@@ -1,24 +1,36 @@
 {% extends 'model/base.html' %}
 
 {% block content %}
-   {{ request.user}}
-    <form method="get">
-        <label for="tipo-anuncio">Escolha o tipo de anuncio:</label>
-        <select id="tipo-anuncio" name="tipoanuncio" onchange="this.form.submit()">
-            <option value="" disabled selected>Selecione sua opção</option>
-            <option value="venda" {% if request.GET.tipoanuncio == 'venda' %} selected {% endif %}>Venda</option>
-            <option value="doacao" {% if request.GET.tipoanuncio == 'doacao' %} selected {% endif %}>Doacao</option>
-        </select>
-    </form>
-    <form method="post">
-        {% csrf_token %}
-        <input type="hidden" value="{{  request.GET.tipoanuncio  }}">
-        <p><input type="text" placeholder="Título"></p>
-        {% if contexto %}
-            <p><input type="{{ contexto.inputtype }}" placeholder="Preço"></p>
-        {% endif %}
-        <p><input type="text" placeholder="Categoria"></p>
-        <p><textarea rows="4" cols="50" placeholder="Descrição..."></textarea></p>
-        <input type="submit" value="Publicar">
-    </form>
+<div class="container">
+    <h1 class="mb-4 " style="margin-left: 20%;">Item para anúncio</h1>
+    <div class="centered">
+        <div class="text-left card-register shadow p-4">
+            {% load static %}
+            <div class="my-profile-text d-flex">
+                <div class="me-3 mb-3">
+                    <img src="{% static 'image/perfil-icon-hd.png' %}" style="width: 50px;">
+                </div>
+                <h2 class="mt-2">{{ usuario.name|title }} {{ usuario.lastname|title }}</h2>
+            </div>
+            <form method="get">
+                <select class="input-style anuncio mt-1 mb-3" id="tipo-anuncio" name="tipoanuncio" onchange="this.form.submit()">
+                    <option value="" disabled selected>Tipo de Anúncio</option>
+                    <option value="venda" {% if request.GET.tipoanuncio == 'venda' %} selected {% endif %}>Venda</option>
+                    <option value="doacao" {% if request.GET.tipoanuncio == 'doacao' %} selected {% endif %}>Doação</option>
+                </select>
+            </form>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" value="{{  request.GET.tipoanuncio  }}">
+                <p><input class="input-style anuncio mb-3" type="text" placeholder="Título"></p>
+                {% if contexto %}
+                <p><input class="input-style anuncio mb-3" type="{{ contexto.inputtype }}" placeholder="Preço"></p>
+                {% endif %}
+                <p><input class="input-style anuncio mb-3" type="text" placeholder="Categoria"></p>
+                <p><textarea class="input-style description mb-3" rows="4" cols="50" placeholder="Descrição..."></textarea></p>
+                <button type="submit" class="btn-login" style="width: 160px; height: 34px; margin: 0 !important">Publicar</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
