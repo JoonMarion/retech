@@ -59,14 +59,15 @@ def anunciar(request):
 
 
 def descricao_produto(request, tipo, name, cod):
-    usuario = Perfil.objects.get(user=request.user)
+    usuario = None
     produto = None
-    print(cod)
     if tipo == 'venda':
         produto = AnuncioVenda.objects.get(pk=cod)
+        usuario = Perfil.objects.get(user=produto.user)
         produto = produto
     if tipo == 'doacao':
         produto = AnuncioVenda.objects.get(pk=cod)
+        usuario = Perfil.objects.get(user=produto.user)
         produto = produto
     
     return render (request, 'produto.html', {'produto': produto, 'usuario': usuario} )
