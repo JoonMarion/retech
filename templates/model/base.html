@@ -38,7 +38,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navbar" id="navbarNav">
-            <ul class="navbar-nav ms-auto pt-3">
+            <ul class="navbar-nav ms-auto pt-3" style="align-items: center;">
                 <li class="nav-item ms-auto ps-3 pe-3">
                     <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
@@ -66,6 +66,17 @@
                 {% else %}
                 <li class="nav-item ms-auto ps-3 pe-3">
                     <a class="nav-link" href="/accounts/login">Login</a>
+                </li>
+                <li class="nav-item ms-auto ps-3 pe-3" style="margin-bottom: 16px;">
+                    <div class="dropdown register">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cadastre-se
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="{% url 'signup_pf' %}">Pessoa Fisica</a></li>
+                          <li><a class="dropdown-item" href="{% url 'signup_pj' %}">Empresa</a></li>
+                        </ul>
+                      </div>
                 </li>
                 {% endif %}
             </ul>

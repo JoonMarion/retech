@@ -18,7 +18,8 @@ def service(request):
     else:
         model = Company.objects.all().order_by('created_at')
     for obj in model:
-        obj.phone = phone_formatted(obj.phone)
+        if obj.phone:
+            obj.phone = phone_formatted(obj.phone)
     paginator = Paginator(model, 3)
     page = request.GET.get('page')
     data['db'] = paginator.get_page(page)
