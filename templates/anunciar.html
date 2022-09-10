@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="mb-4 " style="margin-left: 20%;">Item para anúncio</h1>
+    <h1 class="mb-4 text-center">Item para anúncio</h1>
     <div class="centered">
-        <div class="text-left card-register shadow p-4">
+        <div class="text-center card-register shadow p-4">
             {% load static %}
             <div class="my-profile-text d-flex">
                 <div class="me-3 mb-3">
@@ -27,7 +27,7 @@
                 <p><input class="input-style anuncio mb-3" type="{{ contexto.inputtype }}" placeholder="Preço" name="preco"></p>
                 {% endif %}
                 <p><input class="input-style anuncio mb-3" type="text" placeholder="Categoria" name="categoria"></p>
-                <p><textarea class="input-style description mb-3" rows="4" cols="50" placeholder="Descrição..." name="descricao"></textarea></p>
+                <p><textarea class="input-style description mb-2" rows="4" cols="50" placeholder="Descrição..." name="descricao"></textarea></p>
                 <p><input class="input-style anuncio mb-3" type="text" name="cidade" placeholder="Cidade"></p>
                 <p><input class="input-style anuncio mb-3" type="file" name="image" placeholder="Imagem"></p>
                 <button type="submit" class="btn-login" style="width: 160px; height: 34px; margin: 0 !important">Publicar</button>

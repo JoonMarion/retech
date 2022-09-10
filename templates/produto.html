@@ -1,17 +1,33 @@
 {% extends 'model/base.html' %}
 
-
 {% block content %}
-    <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto" style='width:300px'>
-    <p>{{ produto.nome_prod|title }}</p>
-    {% if produto.preco_prod %}
-    <p>{{ produto.preco_prod }}</p>
-    {% else %}
-    <p>Doação</p>
-    {% endif %}
-    <p>{{ produto.descricao_prod|title }}</p>
-    <p>{{ produto.cidade|title }}</p>
-    <p>{{ produto.categoria|title }}</p>
-    <p>Anunciada por {{ usuario.name|title }} {{ usuario.lastname|title }}</p>
+<div class="container" style="min-height: 530px;">
+    <div class="card-produto shadow p-4">
+        <div class="row">
+            <div class="col">
+                <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto" style='height: 420px;'>
+            </div>
+            <div class="col">
+                <h5 class="card-title mt-4" style="font-size: 2rem;"><strong>{{ produto.nome_prod|title }}</strong></h5>
 
+                <div class="value-product mt-3 mb-2">
+                    {% if produto.preco_prod %}
+                    <p>R${{ produto.preco_prod }}</p>
+                    {% else %}
+                    <p>Doação</p>
+                    {% endif %}
+                </div>
+
+                <p class="text-product mb-2">{{ produto.descricao_prod|title }}</p>
+                <p class="text-product mb-2" style="color: #69B99D;">
+                    {% load static %}
+                    <img src="{% static 'image/ping.png' %}" style="width: 20px;" alt="localization">
+                    {{ produto.cidade|title }}
+                </p>
+                <p class="text-product mb-2">{{ produto.categoria|title }}</p>
+                <p class="text-product">Anunciada por {{ usuario.name|title }} {{ usuario.lastname|title }}</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
