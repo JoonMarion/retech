@@ -66,7 +66,7 @@ def descricao_produto(request, tipo, name, cod):
         usuario = Perfil.objects.get(user=produto.user)
         produto = produto
     if tipo == 'doacao':
-        produto = AnuncioVenda.objects.get(pk=cod)
+        produto = AnuncioDoacao.objects.get(pk=cod)
         usuario = Perfil.objects.get(user=produto.user)
         produto = produto
     

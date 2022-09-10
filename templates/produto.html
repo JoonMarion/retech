@@ -4,10 +4,14 @@
 {% block content %}
     <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto" style='width:300px'>
     <p>{{ produto.nome_prod|title }}</p>
+    {% if produto.preco_prod %}
     <p>{{ produto.preco_prod }}</p>
+    {% else %}
+    <p>Doação</p>
+    {% endif %}
     <p>{{ produto.descricao_prod|title }}</p>
     <p>{{ produto.cidade|title }}</p>
     <p>{{ produto.categoria|title }}</p>
-    <p>Anunciada por @{{ usuario.name|lower }}_{{ usuario.lastname|lower }}</p>
+    <p>Anunciada por {{ usuario.name|title }} {{ usuario.lastname|title }}</p>
 
 {% endblock %}

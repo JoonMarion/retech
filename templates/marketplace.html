@@ -50,6 +50,8 @@
             <div class="card card-marketplace mt-4" style="width: 20rem;">
                 {% if produto.preco_prod %}
                 <a href="{% url 'descricao_produto' tipo='venda' name=produto.nome_prod cod=produto.id %}">
+                {% else %}
+                <a href="{% url 'descricao_produto' tipo='doacao' name=produto.nome_prod cod=produto.id %}">
                 {% endif %}
                     <img src="{{produto.img_prod.url}}" class="card-img-top p-4" alt="Produto">
                     <div class="card-body">
