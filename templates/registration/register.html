@@ -13,7 +13,7 @@
             <p class="register-text">Dados pessoais</p>
             <div class="register-line"></div>
         </div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <input type="hidden" name="next" value="{{ next }}">
@@ -21,6 +21,7 @@
                     <p class="login-inputs">
                         <input type="text" name="nome" class="register-input-style" placeholder="Nome">
                     </p>
+                    {% if tipo == 'pf' %}
                     <div class="row">
                         <div class="col">
                             <p class="login-inputs mt-4">
@@ -36,6 +37,24 @@
                             </p>
                         </div>
                     </div>
+                    {% else %}
+                    <p class="login-inputs mt-4">
+                        <input type="text" name="cnpj" class="register-input-style" placeholder="CNPJ">
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="text" name="descricao" class="register-input-style"
+                                       placeholder="Descrição">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="login-inputs mt-4">
+                                <input type="file" name="logo" class="register-input-style">
+                            </p>
+                        </div>
+                    </div>
+                    {% endif %}
                     <p class="login-inputs mt-4">
                         <input type="email" name="email" class="register-input-style" placeholder="Email">
                     </p>

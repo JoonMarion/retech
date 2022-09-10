@@ -1,6 +1,7 @@
 import os
 from utils import *
 from django.db import models
+from django.contrib.auth.models import User
 
 class Company(models.Model):
     class Meta:
@@ -13,6 +14,7 @@ class Company(models.Model):
     address = models.OneToOneField('Address', on_delete=models.SET_NULL, null=True)
     phone = models.CharField(max_length=11, null=True)
     logo = models.ImageField(upload_to=upload_logo_formatter, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

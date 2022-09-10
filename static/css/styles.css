@@ -123,6 +123,28 @@ li {
     background-color: #69b99d;
 }
 
+/* CADASTRE-SE */
+
+.register .dropdown-toggle::after {
+    display: inline-block;
+}
+
+.register.dropdown > button {
+    border: none;
+    background-color: #F8F9FA;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+    color: white;
+    background-color: #69b99d;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: #69b99d;
+}
+
 /* ESTILIZAÇÃO DO FOOTER */
 .footer {
     width: 100vw;
