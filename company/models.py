@@ -50,4 +50,4 @@ class Address(models.Model):
     state = models.CharField(max_length=2, default='')
     cep = models.CharField(max_length=8, null=True, default='')
     def __str__(self):
-        return f'{self.street + ", " + str(self.number) + ", " + self.city + " - " + self.state}'
+        return f'{self.street + ", " + str(self.number) + ", " + self.city + " - " + self.state.upper()}'

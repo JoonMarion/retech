@@ -40,6 +40,8 @@ def signUp_pf(request):
 
 
     return render(request, 'registration/register.html', {'tipo': tipo})
+
+
 def signUp_pj(request):
     tipo = 'pj'
     if request.method == 'POST':
@@ -68,6 +70,7 @@ def signUp_pj(request):
                 logo=request.FILES.get('logo'),
                 user=novo_usuario,
                 address=novo_endereco,
+                phone=request.POST['telefone'],
             )
 
             return redirect('/accounts/login')
