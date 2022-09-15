@@ -16,7 +16,9 @@
             <img src="{{ m.logo.url }}" style="height: 144px; padding-top: 10px">
             <div class="card-body text-center" style="display: flex; justify-center: center; align-items: center; flex-direction: column;">
                 <p class="card-title">{{ m.address }}</p>
-                <p>{{ m.phone }}<p>
+                {% if m.phone %}
+                    <p>{{ m.phone }}<p>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
