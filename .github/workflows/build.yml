@@ -3,10 +3,7 @@ name: ci
 on:
     push:
         branches:
-        - '*'
         - main
-        - master
-        - develop
     
     workflow_dispatch:
 
@@ -23,10 +20,6 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
         
         - name: Docker build and push
-          if: github.ref != 'refs/heads/master' ||
-              github.ref != 'refs/heads/develop' ||
-              github.ref != 'refs/heads/release/*' ||
-              github.ref == 'refs/haeds/*'
 
           uses: docker/build-push-action@v3.0.0
           with:
