@@ -49,5 +49,6 @@ class Address(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=2, default='')
     cep = models.CharField(max_length=8, null=True, default='')
+    
     def __str__(self):
-        return f'{self.street + ", " + str(self.number) + ", " + self.city + " - " + self.state.upper()}'
+        return format_address(self.street, self.number, self.district, self.city, self.state)

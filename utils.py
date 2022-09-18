@@ -17,3 +17,10 @@ def remove_text_accents(txt: str) -> str:
     process = process.decode("utf-8")
     
     return process
+
+def format_address(street: str, number: int, district: str, city: str, state: str) -> str:
+    """ Format an address """
+    for palava in street.split():
+        if len(palava) > 3:
+            street = street.replace(palava, palava.capitalize())
+    return f'{street + ", " + str(number) + ", " + district.title() + ", " + city.capitalize() + " - " + state.upper()}'
